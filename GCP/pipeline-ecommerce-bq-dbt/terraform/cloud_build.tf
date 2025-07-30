@@ -8,13 +8,13 @@ variable "branch_name" {
 variable "repo_owner" {
   description = "The owner (username or organization) of the GitHub repository."
   type        = string
-  default     = "claudiocmm"
+  default     = "Breeze-HugoAlves"
 }
 
 variable "repo_name" {
   description = "The name of the GitHub repository."
   type        = string
-  default     = "data_engineering_projects_temp"
+  default     = "data_engineering_projects"
 }
 
 variable "cloudbuild_connection_name" {
@@ -23,11 +23,12 @@ variable "cloudbuild_connection_name" {
   default     = "github-connection"
 }
 
+/*
 # Cloud Build Connection to GitHub
 # 1. Cloud Build Trigger
 resource "google_cloudbuild_trigger" "main_branch_trigger" {
   project  = var.project_id
-  location = "global"
+  location = var.region
   name     = "pipeline-ecommerce-bq-dbt-trigger"
   description = "Triggers build on push to ${var.branch_name} branch"
   filename  = "GCP/pipeline-ecommerce-bq-dbt/cloud_run_dbt/cloudbuild.yml"
@@ -42,10 +43,10 @@ resource "google_cloudbuild_trigger" "main_branch_trigger" {
   }
 
   included_files = ["GCP/pipeline-ecommerce-bq-dbt/cloud_run_dbt/**"]
-  service_account = "projects/ecommerce-analysis-455200/serviceAccounts/${google_service_account.cloud_build_service_account.email}"
+  service_account = "projects/hugoalves-sandbox/serviceAccounts/${google_service_account.cloud_build_service_account.email}"
   include_build_logs = "INCLUDE_BUILD_LOGS_WITH_STATUS"
-
 }
 
+*/
 
 

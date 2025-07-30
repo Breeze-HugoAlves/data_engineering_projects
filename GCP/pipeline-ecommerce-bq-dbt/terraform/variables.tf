@@ -9,7 +9,7 @@ variable "project_id" {
 variable "region" {
   description = "The GCP region for Cloud Build resources."
   type        = string
-  default     = "us-central1" 
+  default     = "europe-west4" 
 }
 
 ##### IAM VARIABLES ######
@@ -89,7 +89,7 @@ variable "cloud_build_required_roles" {
 variable "gcs_bucket_location" {
   description = "The location (region) for the GCS bucket."
   type        = string
-  default     = "us-central1"
+  default     = "europe-west4"
 }
 
 variable "gcs_bucket_name_prefix" {
