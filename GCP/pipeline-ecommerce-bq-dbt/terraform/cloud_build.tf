@@ -8,7 +8,7 @@ variable "branch_name" {
 variable "repo_owner" {
   description = "The owner (username or organization) of the GitHub repository."
   type        = string
-  default     = "Breeze-HugoAlves"
+  default     = "langchain-breeze"
 }
 
 variable "repo_name" {
@@ -28,7 +28,7 @@ variable "cloudbuild_connection_name" {
 # 1. Cloud Build Trigger
 resource "google_cloudbuild_trigger" "main_branch_trigger" {
   project  = var.project_id
-  location = var.region
+  location = "global"
   name     = "pipeline-ecommerce-bq-dbt-trigger"
   description = "Triggers build on push to ${var.branch_name} branch"
   filename  = "GCP/pipeline-ecommerce-bq-dbt/cloud_run_dbt/cloudbuild.yml"
@@ -43,10 +43,8 @@ resource "google_cloudbuild_trigger" "main_branch_trigger" {
   }
 
   included_files = ["GCP/pipeline-ecommerce-bq-dbt/cloud_run_dbt/**"]
-  service_account = "projects/hugoalves-sandbox/serviceAccounts/${google_service_account.cloud_build_service_account.email}"
+  service_account = "projects/langchain-breeze/serviceAccounts/${google_service_account.cloud_build_service_account.email}"
   include_build_logs = "INCLUDE_BUILD_LOGS_WITH_STATUS"
 }
-
 */
-
 
