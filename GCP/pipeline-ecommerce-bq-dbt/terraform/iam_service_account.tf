@@ -20,14 +20,7 @@ resource "google_service_account" "cloud_build_service_account" {
   description  = "Service Account for cloud_build to interact with Google Cloud resources."
 }
 
-
-# 2. Create the JSON Key for the Service Account
-
-resource "google_service_account_key" "airflow_service_account_key" {
-  service_account_id = google_service_account.airflow_service_account.name 
-}
-
-# 3. Grant necessary IAM roles to the Service Account (Project Level Example)
+# 2. Grant necessary IAM roles to the Service Account (Project Level Example)
 #    Adjust roles and resource level (project, dataset, bucket) as needed in variables.tf or terraform.tfvars.
 resource "google_project_iam_member" "dbt_iam_bindings" {
   count   = length(var.dbt_required_roles)

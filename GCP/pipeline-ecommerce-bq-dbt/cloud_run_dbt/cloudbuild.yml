@@ -1,12 +1,12 @@
 substitutions:
   _SERVICE_NAME: 'pipeline-ecommerce-bq-dbt'
-  _PROJECT_ID: 'langchain-breeze'
+  _PROJECT_ID: 'dbt-poc-468412'
   _REGION: 'global'
   _IMAGE_NAME: '${_SERVICE_NAME}'
   _AR_REPO: 'cloud-run'
   _PATH: 'GCP/pipeline-ecommerce-bq-dbt/cloud_run_dbt'
-  _BUILD_SA: 'cloudbuild-runner-sa@langchain-breeze.iam.gserviceaccount.com'
-  _RUN_SA: 'dbt-runner-sa@langchain-breeze.iam.gserviceaccount.com'
+  _BUILD_SA: 'cloudbuild-runner-sa@dbt-poc-468412.iam.gserviceaccount.com'
+  _RUN_SA: 'dbt-runner-sa@dbt-poc-468412.iam.gserviceaccount.com'
 
 steps:
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'

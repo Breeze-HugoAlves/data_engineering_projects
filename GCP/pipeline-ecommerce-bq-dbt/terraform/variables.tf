@@ -3,7 +3,7 @@
 variable "project_id" {
   description = "The Google Cloud project ID where resources will be created."
   type        = string
-  default     = "langchain-breeze"
+  default     = "dbt-poc-468412"
 }
 
 variable "region" {

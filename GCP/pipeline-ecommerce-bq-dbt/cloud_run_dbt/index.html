@@ -1,0 +1,9 @@
+<!doctype html>
+<title>Hello from Flask!</title>
+{% if message %}
+  <h1>Hello {{ message }}!</h1>
+  <h2>Service: {{ service }}</h2>
+  <h2>Revision: {{ revision }}</h2>
+{% else %}
+  <h1>Hello, World!</h1>
+{% endif %}
