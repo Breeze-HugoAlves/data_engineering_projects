@@ -29,10 +29,14 @@ def hello():
 
     logging.info(f'Service: {service}, Revision: {revision}')
 
-    return render_template('index.html',
-        message=message,
-        Service=service,
-        Revision=revision)
+    return message
+
+#    return render_template('index.html',
+#        message=message,
+#        Service=service,
+#        Revision=revision)
+#
+        
 
 
 @app.route('/run_transformation', methods=['POST'])
